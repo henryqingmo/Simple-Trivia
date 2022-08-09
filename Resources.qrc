@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>bgsound.mp3</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>bgpic.jpg</file>
+        <file>bgpic.png</file>
+    </qresource>
+</RCC>
