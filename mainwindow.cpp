@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "credit_dialog.h"
+#include "game.h"
 #include <QMediaPlayer>
 #include <QPixmap>
 #include <QPalette>
@@ -13,6 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->muteCheckbox->setCheckState(Qt::Checked);
+    QMediaPlayer *music = new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/bgsound.mp3"));
+    music->play();
+
 }
 
 MainWindow::~MainWindow()
@@ -20,6 +25,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_startButton_clicked()
+{
+   Game game;
+   game.setModal(true);
+   game.exec();
+}
 
 
 void MainWindow::on_creditButton_clicked()
@@ -32,18 +43,20 @@ void MainWindow::on_creditButton_clicked()
 
 
 
-
 void MainWindow::on_muteCheckbox_stateChanged(int arg1)
 {
     QMediaPlayer *music = new QMediaPlayer;
     music->setMedia(QUrl("qrc:/sounds/bgsound.mp3"));
-    if(ui->muteCheckbox->isChecked() && music->state() == QMediaPlayer::StoppedState)
-    {
-       music->play();
-    }
-    else
-    {
-        music->stop();
-    }
+//    if(ui->muteCheckbox->isChecked())
+//    {
+//        music->play();
+//    }
+//    else
+//    {
+//        music->pause();
+//    }
+
 }
+
+
 

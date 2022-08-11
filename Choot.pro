@@ -18,6 +18,7 @@ SOURCES += \
 HEADERS += \
     credit_dialog.h \
     game.h \
+    main.h \
     mainwindow.h
 
 FORMS += \

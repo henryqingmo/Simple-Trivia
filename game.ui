@@ -1,59 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Game</class>
- <widget class="QWidget" name="Game">
+ <widget class="QDialog" name="Game">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>1102</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>120</y>
-     <width>431</width>
-     <height>311</height>
+     <x>260</x>
+     <y>80</y>
+     <width>591</width>
+     <height>231</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+  </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>1020</x>
+     <y>640</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>380</y>
+     <width>601</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="ButtonD">
+       <widget class="QPushButton" name="buttonA">
         <property name="text">
-         <string>D</string>
+         <string>PushButton</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="ButtonC">
+       <widget class="QPushButton" name="buttonB">
         <property name="text">
-         <string>C</string>
+         <string>PushButton</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
-    <item row="0" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="ButtonA_2">
+       <widget class="QPushButton" name="buttonC">
         <property name="text">
-         <string>A</string>
+         <string>PushButton</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="ButtonB">
+       <widget class="QPushButton" name="buttonD">
         <property name="text">
-         <string>B</string>
+         <string>PushButton</string>
         </property>
        </widget>
       </item>
@@ -63,5 +86,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Game</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1047</x>
+     <y>657</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1044</x>
+     <y>596</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

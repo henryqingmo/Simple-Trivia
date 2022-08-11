@@ -17,9 +17,8 @@ public:
 
 private slots:
     void on_creditButton_clicked();
-    void on_exitButton_clicked();
-
     void on_muteCheckbox_stateChanged(int arg1);
+    void on_startButton_clicked();
 
 private:
     Ui::MainWindow *ui;
