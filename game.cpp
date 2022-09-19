@@ -29,7 +29,7 @@ Game::Game(QWidget *parent) :
         check = 1;
         break;
     case 2:
-        ui->buttonC->setText(int_to_Qstring(ans));
+        ui->buttonB->setText(int_to_Qstring(ans));
         vect.erase(vect.begin()+1);
         check = 2;
         break;
@@ -69,47 +69,47 @@ void update_game()
 
 void Game::on_buttonA_clicked()
 {
-    Result result;
-    result.setModal(true);
-    result.exec();
     if(check == 1)
     {
         isAnswer = true;
     }
+    Result result;
+    result.setModal(true);
+    result.exec();
 }
 
 
 void Game::on_buttonB_clicked()
 {
-    Result result;
-    result.setModal(true);
-    result.exec();
     if(check == 2)
     {
         isAnswer = true;
     }
+    Result result;
+    result.setModal(true);
+    result.exec(); 
 }
 
 
 void Game::on_buttonC_clicked()
 {
-    Result result;
-    result.setModal(true);
-    result.exec();
     if(check == 3)
     {
         isAnswer = true;
     }
+    Result result;
+    result.setModal(true);
+    result.exec();
 }
 
 
 void Game::on_buttonD_clicked()
 {
-    Result result;
-    result.setModal(true);
-    result.exec();
     if(check == 4)
     {
         isAnswer = true;
     }
+    Result result;
+    result.setModal(true);
+    result.exec();
 }

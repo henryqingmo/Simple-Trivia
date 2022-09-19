@@ -16,6 +16,7 @@ Result::Result(QWidget *parent) :
     {
         ui->textBrowser->setText("incorrect");
     }
+    isAnswer = false;
 }
 
 Result::~Result()
@@ -25,8 +26,10 @@ Result::~Result()
 
 void Result::on_buttonBox_accepted()
 {
-    update_game();
-    qApp->processEvents();
+    Game game;
+    game.setModal(true);
+    game.exec();
+
 }
 
 
