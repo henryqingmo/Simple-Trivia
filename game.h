@@ -3,6 +3,10 @@
 
 #include <QDialog>
 
+extern bool isAnswer;
+
+void update_game();
+
 namespace Ui {
 class Game;
 }
@@ -15,11 +19,7 @@ public:
     explicit Game(QWidget *parent = nullptr);
     ~Game();
 
-signals:
-    void sendAnswer(bool check, QString answer);
-
 private slots:
-    void on_buttonA_clicked(int check);
 
     void on_buttonA_clicked();
 

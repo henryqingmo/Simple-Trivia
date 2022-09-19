@@ -15,6 +15,9 @@ public:
     explicit Result(QWidget *parent = nullptr);
     ~Result();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::Result *ui;
 };
