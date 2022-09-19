@@ -32,9 +32,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>290</x>
       <y>30</y>
-      <width>161</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -44,7 +44,7 @@
      </font>
     </property>
     <property name="text">
-     <string>C hoot!</string>
+     <string>Simple-Trivia</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -107,7 +107,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
