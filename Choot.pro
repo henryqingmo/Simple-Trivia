@@ -13,18 +13,21 @@ SOURCES += \
     credit_dialog.cpp \
     game.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    result.cpp
 
 HEADERS += \
     credit_dialog.h \
     game.h \
     main.h \
-    mainwindow.h
+    mainwindow.h \
+    result.h
 
 FORMS += \
     credit_dialog.ui \
     game.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    result.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

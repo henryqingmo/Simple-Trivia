@@ -14,6 +14,11 @@ int generate_random(int min, int max)
     return rand()%(max + 1 - min) + min;
 }
 
+QString int_to_Qstring(int num)
+{
+    return QString::number(num);
+}
+
 void number_generator(int num, int* arry)
 {
 
@@ -32,11 +37,13 @@ void number_generator(int num, int* arry)
     }
 }
 
-std::string equation_generator(int num1, int num2, int* arry, int* ans)
+QString equation_generator(int* arry, int* ans)
 {
     std::unordered_map<int, std::string> dict;
-    int num;
+    int num, num1, num2;
     std::string a, b;
+    num1 = rand() % 50 + 10;
+    num2 = rand() % 50 + 1;
     num = generate_random(1, 3);
     a = std::to_string(num1);
     b = std::to_string(num2);
@@ -56,21 +63,11 @@ std::string equation_generator(int num1, int num2, int* arry, int* ans)
             break;
     }
     number_generator(*ans, arry);
-    return dict[num];
+    return QString::fromStdString(dict[num]);
 }
 
-
 int main(int argc, char *argv[])
-{
-    int ans;
-    int* ptn_ans = &ans;
-    int arry[3];
-    srand(time(NULL));
-    int num1 = rand() % 50 + 10;
-    int num2 = rand() % 50 + 1;
-    equation_generator(num1, num2, arry, ptn_ans);
-
-
+{ 
     QApplication a(argc, argv);
     MainWindow w;
 
