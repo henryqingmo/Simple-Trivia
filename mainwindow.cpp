@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     QMediaPlayer *music = new QMediaPlayer;
     music->setMedia(QUrl("qrc:/sounds/bgsound.mp3"));
     music->play();
+    QPalette pal = this->palette();
+    pal.setBrush(QPalette::Window, QBrush(QPixmap("qrc:/images/bgpic.png")));
+    setPalette(pal);
 
 }
 
@@ -47,14 +50,14 @@ void MainWindow::on_muteCheckbox_stateChanged(int arg1)
 {
     QMediaPlayer *music = new QMediaPlayer;
     music->setMedia(QUrl("qrc:/sounds/bgsound.mp3"));
-//    if(ui->muteCheckbox->isChecked())
-//    {
-//        music->play();
-//    }
-//    else
-//    {
-//        music->pause();
-//    }
+    if(ui->muteCheckbox->isChecked() && arg1)
+    {
+        music->play();
+    }
+    else
+    {
+        music->pause();
+    }
 
 }
 

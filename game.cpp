@@ -50,6 +50,7 @@ Game::Game(QWidget *parent) :
         vect[i]->setText(int_to_Qstring(arry[i]));
     }
 
+
 }
 
 
