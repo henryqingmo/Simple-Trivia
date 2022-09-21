@@ -35,6 +35,6 @@ And thats the basis of the game!
 
     git clone https://github.com/henryqingmo/Simple-Trivia.git
     cd Simple-Trivia
-    chmod +x ./Simple-Trivia
+    chmod +x Simple-Trivia
     ./Simple-Trivia
 
