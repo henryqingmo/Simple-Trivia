@@ -31,6 +31,7 @@ And thats the basis of the game!
 ### Requirements: 64-bits windows 10 or above
 [click here to instal](https://github.com/henryqingmo/Simple-Trivia/releases/download/v1.3.1/Simple-Trivia_Setup.exe)
 ## Linux
+### Requirements: qtframework 5.15 
 
     git clone https://github.com/henryqingmo/Simple-Trivia.git
     cd Simple-Trivia
