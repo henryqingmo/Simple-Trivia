@@ -3,6 +3,9 @@
 #include <QString>
 #include <string>
 
+/* prototype of the functions in main.cpp files to be called in other files.
+*/
+
 int generate_random(int min, int max);
 
 QString int_to_Qstring(int num);

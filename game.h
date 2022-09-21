@@ -3,7 +3,7 @@
 
 #include <QDialog>
 
-extern bool isAnswer;
+extern bool isAnswer; //value of isAnswer is shared to result.cpp through here.
 
 void update_game();
 

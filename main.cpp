@@ -9,17 +9,22 @@
 #include <utility>
 #include <unistd.h>
 
-int generate_random(int min, int max)
+/* This file is responsible for generating the equations and answers
+ * It defines the functions which is then called in the game.cpp file through its header file.
+*/
+
+
+int generate_random(int min, int max)   //srand logic for generating in a range
 {
     return rand()%(max + 1 - min) + min;
 }
 
-QString int_to_Qstring(int num)
+QString int_to_Qstring(int num)    //convert int to Qstring requried by setText function
 {
     return QString::number(num);
 }
 
-void number_generator(int num, int* arry)
+void number_generator(int num, int* arry)   //generate three numbers based on a number and is not equal to that number
 {
 
     for(int i = 0; i < 3; i++)
@@ -32,25 +37,25 @@ void number_generator(int num, int* arry)
                 random = generate_random(num-10, num+10);
             }
         }
-        *arry = random;
-        arry += 1;
+        *arry = random; //The three answers are stored in this array initiallised in game.cpp
+        arry += 1; //adding values to a pointer is a way of looping through an array for its sequential nature in memory.
     }
 }
 
-QString equation_generator(int* arry, int* ans)
+QString equation_generator(int* arry, int* ans)  //using hashmap to store operations as numbers 1 to 3 and randomly selects an operation
 {
     std::unordered_map<int, std::string> dict;
-    int num, num1, num2;
+    int operation, num1, num2;
     std::string a, b;
-    num1 = rand() % 50 + 10;
+    num1 = rand() % 50 + 10;   //The two numbers for the equation generates here
     num2 = rand() % 50 + 1;
-    num = generate_random(1, 3);
+    operation = generate_random(1, 3);
     a = std::to_string(num1);
     b = std::to_string(num2);
     dict.insert(make_pair(1, a + " + " + b + " = "));
     dict.insert(make_pair(2, a + " - " + b + " = "));
     dict.insert(make_pair(3, a + " * " + b + " = "));
-    switch (num)
+    switch (operation)
     {
         case 1:
             *ans =  num1 + num2;
@@ -63,21 +68,13 @@ QString equation_generator(int* arry, int* ans)
             break;
     }
     number_generator(*ans, arry);
-    return QString::fromStdString(dict[num]);
+    return QString::fromStdString(dict[operation]); //called in game.cpp line 23 for displaying the equaiotn
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) //initialise the mainwindow
 { 
     QApplication a(argc, argv);
     MainWindow w;
-
-
-//    w.setAutoFillBackground(true);
-//    QPalette palette;
-//    QPixmap pixmap;
-//    pixmap.load("qrc/images/bgpic.jpg");
-//    palette.setBrush(QPalette::Window, QBrush(pixmap));
-//    w.setPalette(palette);
     w.show();
     return a.exec();
 }

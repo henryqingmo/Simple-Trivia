@@ -8,7 +8,7 @@ Result::Result(QWidget *parent) :
     ui(new Ui::Result)
 {
     ui->setupUi(this);
-    if(isAnswer == true)
+    if(isAnswer == true) //Checking the value of isAnswer keywords defined in game.cpp
     {
         ui->textBrowser->setText("correct");
     }
@@ -24,7 +24,7 @@ Result::~Result()
     delete ui;
 }
 
-void Result::on_buttonBox_accepted()
+void Result::on_buttonBox_accepted() //Generating new widget.
 {
     Game game;
     game.setModal(true);

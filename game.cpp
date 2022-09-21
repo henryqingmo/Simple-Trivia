@@ -15,14 +15,21 @@ Game::Game(QWidget *parent) :
     ui(new Ui::Game)
 {
     ui->setupUi(this);
-    int ans;
+    int ans;                      //initiallise the correct answer and the array to store the wrong answers
     int* ptn_ans = &ans;
     int arry[3];
-    std::vector<QPushButton *> vect = {ui->buttonA, ui->buttonB, ui->buttonC, ui->buttonD};
+    std::vector<QPushButton *> vect = {ui->buttonA, ui->buttonB, ui->buttonC, ui->buttonD};  //button objects are put into an dynamic array
     srand(time(NULL));
-    equation_generator(arry, ptn_ans);
-    ui->textBrowser->setText(equation_generator(arry, ptn_ans));
-    ui->lcdNumber->display(score);
+    ui->textBrowser->setText(equation_generator(arry, ptn_ans)); //calling function in main.cpp to display equation
+    ui->lcdNumber->display(score);  //setting the value for score
+
+
+    /*
+    *  A random number is selected from 1 to 4 which corresponds to button A to D and the one selected displays the correct answer
+    *  and is removed from the wrong answer array. Check is set to the corresponding number inwhich the button bonds to the correct answer.
+    */
+
+
     int num = generate_random(1, 4);
     switch (num) {
     case 1:
@@ -49,7 +56,7 @@ Game::Game(QWidget *parent) :
 
     for(int i = 0; i < 3; i++)
     {
-        vect[i]->setText(int_to_Qstring(arry[i]));
+        vect[i]->setText(int_to_Qstring(arry[i]));  //Through this for loop, buttons are assigned with their wrong answers generated in main.cpp
     }
 
 }
@@ -68,6 +75,10 @@ void update_game()
     qApp->processEvents();
 }
 
+/* On click events, result widget is created and each button's corresponding value is checked against the corresponding number where the the button bonds
+ * to the correct answer. And if the button is correct,  isAnswer is set to true which determines the message to user in the result.cpp file
+ * Via extern keywords, global variables can be shared through multiple cpp files. Extern keywords can be found in the header file.
+*/
 
 void Game::on_buttonA_clicked()
 {

@@ -17,10 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
     QMediaPlayer *music = new QMediaPlayer;
     music->setMedia(QUrl("qrc:/sounds/bgsound.mp3"));
     music->play();
-    QPalette pal = this->palette();
-    pal.setBrush(QPalette::Window, QBrush(QPixmap("qrc:/images/bgpic.png")));
-    setPalette(pal);
-
 }
 
 MainWindow::~MainWindow()
@@ -28,7 +24,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_startButton_clicked()
+void MainWindow::on_startButton_clicked() //Creates the game widget
 {
    Game game;
    game.setModal(true);
@@ -36,7 +32,7 @@ void MainWindow::on_startButton_clicked()
 }
 
 
-void MainWindow::on_creditButton_clicked()
+void MainWindow::on_creditButton_clicked() //Creates the credit widget
 {
    credit_dialog Dialog;
    Dialog.setModal(true);
@@ -56,7 +52,7 @@ void MainWindow::on_muteCheckbox_stateChanged(int arg1)
     }
     else
     {
-        music->pause();
+        music->pause();  //This is not working for some reason
     }
 
 }
