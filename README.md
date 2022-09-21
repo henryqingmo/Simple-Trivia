@@ -38,3 +38,11 @@ And thats the basis of the game!
     chmod +x Simple-Trivia
     ./Simple-Trivia
 
+# Bugs:
+
+Known issues of the game is [here](https://github.com/henryqingmo/Simple-Trivia/issues)
+
+
+
+
+
