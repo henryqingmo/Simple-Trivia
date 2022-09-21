@@ -6,8 +6,9 @@
 #include <vector>
 #include <QGuiApplication>
 
-int check;
+int check, score;
 bool isAnswer = false;
+
 
 Game::Game(QWidget *parent) :
     QDialog(parent),
@@ -21,6 +22,7 @@ Game::Game(QWidget *parent) :
     srand(time(NULL));
     equation_generator(arry, ptn_ans);
     ui->textBrowser->setText(equation_generator(arry, ptn_ans));
+    ui->lcdNumber->display(score);
     int num = generate_random(1, 4);
     switch (num) {
     case 1:
@@ -50,7 +52,6 @@ Game::Game(QWidget *parent) :
         vect[i]->setText(int_to_Qstring(arry[i]));
     }
 
-
 }
 
 
@@ -73,6 +74,7 @@ void Game::on_buttonA_clicked()
     if(check == 1)
     {
         isAnswer = true;
+        score += 1;
     }
     Result result;
     result.setModal(true);
@@ -85,6 +87,7 @@ void Game::on_buttonB_clicked()
     if(check == 2)
     {
         isAnswer = true;
+        score += 1;
     }
     Result result;
     result.setModal(true);
@@ -97,6 +100,7 @@ void Game::on_buttonC_clicked()
     if(check == 3)
     {
         isAnswer = true;
+        score += 1;
     }
     Result result;
     result.setModal(true);
@@ -109,8 +113,15 @@ void Game::on_buttonD_clicked()
     if(check == 4)
     {
         isAnswer = true;
+        score += 1;
     }
     Result result;
     result.setModal(true);
     result.exec();
 }
+
+void Game::on_exitButton_clicked()
+{
+   exit(EXIT_FAILURE);
+}
+
